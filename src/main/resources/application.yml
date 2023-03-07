@@ -1,0 +1,22 @@
+server:
+  port: 8000
+
+
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/myoauth2
+    username: postgres
+    password: test123
+    driver-class-name: org.postgresql.Driver
+    
+keycloak:
+  realm: ehtasham
+  auth-server-url: http://${KEYCLOAK_HOST:localhost}:${KEYCLOAK_PORT:7080}/auth
+  resource: spring-app
+  bearer-only: true
